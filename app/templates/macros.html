@@ -1,0 +1,26 @@
+{% macro displayArticlesList(articles_list) %}
+
+    {% for articles in articles_list %}
+        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+            <img src="{{ articles.urlToImage }}" alt="{{ articles.title }} url" class="img-responsive">
+            <li class="text-center">
+                <a href="/articles/{{articles.id}}">
+                    {{ articles.title|truncate(10)}}</a>
+            </li>
+        </div>
+
+    {% endfor %}
+
+{% endmacro %}
+
+{% macro displayArticlesList(popular_list)%}
+    {% for source in popular_list %}
+        <p><a href="{{source.url}}">{{source.name}}</a></p>
+        <p>{{source.description}}</p>
+        <p>{{ source.url}}</p>
+        <p>{{source.urlToImage}}</p>
+        <p>{{source.publishedAt}}</p>
+
+    {% endfor %}
+
+{% endmacro %}

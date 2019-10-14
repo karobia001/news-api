@@ -1,4 +1,4 @@
-class Articles
+class Articles:
 
 
  def __init__(self,source,author,title,description,url,urlToImage,publishedAt,content):
