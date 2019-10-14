@@ -1,3 +1,5 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,8 +15,8 @@
      <h3> Trending News</h3>
      <ul>
         {% for popular_news in popular %}
-            <li>{{ popular_news.name}}</li>
-            
+            <li>{{ macro.displayNewsList(popular) }}</li>
+
         {% endfor %}
     </ul>
     </body>
