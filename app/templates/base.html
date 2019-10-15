@@ -1,13 +1,14 @@
-{% extends 'bootstrap/base.html'%}
+
 
 <!-- Navbar block  --> 
-{% block navbar %}
-    {% include 'navbar.html' %}
-{% endblock %}
+
 
 <!DOCTYPE html>
 <html>
     <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
         <meta charset="utf-8">
         {% if title %}
         <title> {{ title }}</title>
@@ -16,6 +17,9 @@
         {% endif %}
     </head>
     <body>
+        {% block navbar %}
+        {% include 'navbar.html' %}
+        {% endblock %}
         <!-- Content block -->
 
         {% block content %}

@@ -2,27 +2,24 @@
 
 {% block content %}
 
-<body>
+<div>
 
+    <div class="container">
   <br>
-  <br>
-  <br>
-
-  <h3 style="text-align:center; color:#0d47a1" class="display-3">News from {{ name_source }}</h3>
-
-  <div class="container">
+   <div class="jumbotron image-responsive" style="background-image: url(https://thewallpaper.co//wp-content/uploads/2016/03/earth-at-night-from-space-hd-wallpaper-iphone-background-images-abstract-colorful-1920x1080.jpg);">
+  <h3 style="text-align:center; color:wheat" class="display-3">THE NEWS {{ name_source }}</h3><br><br><br><br><br>><br>><br>
+   </div>
+ 
     <div class="card-columns">
-      {% for article in articles %}
+      {% for source in sources %}
 
       <div class="card border-secondary">
-        <img class="card-img-top" src="{{ article.urlToImage }}" alt="Card image cap" size="100px180">
-        <div class="card-body">
-          <h5 class="card-title">{{article.title}}</h5>
-          <p class="card-text">{{article.description}}</p>
-          <a href="{{article.url}}" class="card-link">Read Full Story</a>
-        </div>
-
-        <footer class="blockquote-footer"> <cite title="Source Title">Posted on {{article.publishedAt}} </cite></footer>
+        <div class="card-body bg-warning">
+          <div class="card-title"><a href="{{source.url}}" class="card-link">{{source.name}}</a></div>
+          <div class="card-text">
+            {{source.description}}
+          </div>
+          </div>
       </div>
       {% endfor %}
 

@@ -14,12 +14,20 @@
 {% endmacro %}
 
 {% macro displayArticlesList(popular_list)%}
-    {% for source in popular_list %}
-        <p><a href="{{source.url}}">{{source.name}}</a></p>
-        <p>{{source.description}}</p>
-        <p>{{ source.url}}</p>
-        <p>{{source.urlToImage}}</p>
-        <p>{{source.publishedAt}}</p>
+    {% for source in popular_news %}
+    <div class="card border-secondary">
+            <div class="card-body  bg-warning">
+            <img src="{{source.urlToImage}}" class="card-img-top" alt="...">
+              <div class="card-title">{{source.title}}</div>
+              <div class="card-text">
+                {{source.description}}
+               </div>
+              <a href="{{source.url}}" class="card-link">Read Full Story</a>
+    
+            </div>
+    
+            <footer class="blockquote-footer"> <cite title="Source Title">Posted on {{source.publishedAt}} </cite></footer>
+          </div>
 
     {% endfor %}
 
